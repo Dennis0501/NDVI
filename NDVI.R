@@ -1,5 +1,4 @@
 #31/03/2022
-#Trabajar con imagenes landsat
 #Dennis Alvarino Cieza Tarrillo
 
 # Instalar paquetes -------------------------------------------------------
@@ -29,13 +28,13 @@ proy <- "+proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs" #Borram
 
 #Descomprimiendo datos
 zip <- "LC08_L1TP_009065_20200804_20200821_01_T1.tar.gz" #Lectura de imagen comprimida
-untar(zip) #Extracción de archivos
+untar(zip) #ExtracciÃ³n de archivos
 
 # Leer metadatos ----------------------------------------------------------
 mtl <- "LC08_L1TP_009065_20200804_20200821_01_T1_MTL.txt" #Reemplazar por el nombre del metadato
 (MTL <- readMeta(mtl)) #Ver metadatos
 
-lsat <- stackMeta(mtl) %>% #Compilación de bandas
+lsat <- stackMeta(mtl) %>% #CompilaciÃ³n de bandas
   crop(shp %>% st_transform(proy)) %>%  mask(shp %>% st_transform(proy)) #Corte de la imagen
 
 # Normalized Difference Vegetation Index (NDVI) ---------------------------
