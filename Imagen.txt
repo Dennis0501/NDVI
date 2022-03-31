@@ -1,0 +1,3 @@
+Imagen landsat utilizada
+
+LC08_L1TP_009065_20200804_20200821_01_T1.tar
